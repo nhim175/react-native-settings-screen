@@ -19,6 +19,7 @@ export interface Props {
   globalTextStyle?: TextStyle
   scrollViewProps?: Partial<ScrollViewProps>
   rowStyle?: ViewStyle
+  rowBorderStyle: ViewStyle
 }
 
 export class SettingsScreen extends React.Component<Props> {
@@ -37,6 +38,7 @@ export class SettingsScreen extends React.Component<Props> {
               section={item}
               globalTextStyle={globalTextStyle}
               rowStyle={rowStyle}
+              rowBorderStyle={rowBorderStyle}
             />
           )
       }

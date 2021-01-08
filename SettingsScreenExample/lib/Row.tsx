@@ -6,6 +6,7 @@ import { Chevron } from './Chevron'
 
 export interface RowData {
   rowStyle?: ViewStyle
+  rowBorderStyle?: ViewStyle
   title: string
   titleStyle?: TextStyle
   subtitle?: string
@@ -30,6 +31,7 @@ export const Row = ({
   renderAccessory,
   
   rowStyle = {},
+  rowBorderStyle = {},
   titleStyles,
   subtitleStyles,
   isFirst,
@@ -40,7 +42,7 @@ export const Row = ({
   return (
     <Container height={subtitle ? 56 : 46}>
       <TopBorderContainer isFirst={isFirst}>
-        <TopBorder />
+        <TopBorder style={rowBorderStyle} />
       </TopBorderContainer>
       <ContentContainer style={[styles.contentContainer, rowStyle]} onPress={onPress}>
         <TitlesContainer>
@@ -89,7 +91,6 @@ const TopBorderContainer = styled.View<TopBorderContainerProps>`
   align-self: stretch;
   height: ${StyleSheet.hairlineWidth};
   padding-left: ${p => (p.isFirst ? 0 : 15)};
-  background-color: white;
 `
 
 const TopBorder = styled.View`

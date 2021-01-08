@@ -16,6 +16,7 @@ export interface SectionProps {
   section: SectionData
   globalTextStyle?: TextStyle
   rowStyle?: ViewStyle
+  rowBorderStyle?: ViewStyle
 }
 
 export const Section = ({ section, globalTextStyle, rowStyle }: SectionProps) => {
@@ -39,6 +40,7 @@ export const Section = ({ section, globalTextStyle, rowStyle }: SectionProps) =>
         key={rowData.title}
         {...rowData}
         rowStyle={rowStyle}
+        rowBorderStyle={rowBorderStyle}
         titleStyles={[globalTextStyle, rowData.titleStyle]}
         subtitleStyles={[globalTextStyle, rowData.subtitleStyle]}
         isFirst={isFirst}
