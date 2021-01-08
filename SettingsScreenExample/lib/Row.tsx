@@ -5,7 +5,7 @@ import styled from 'styled-components/native'
 import { Chevron } from './Chevron'
 
 export interface RowData {
-  rowStyle: ViewStyle
+  rowStyle?: ViewStyle
   title: string
   titleStyle?: TextStyle
   subtitle?: string
