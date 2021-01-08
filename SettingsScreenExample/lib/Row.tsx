@@ -42,7 +42,7 @@ export const Row = ({
   return (
     <Container height={subtitle ? 56 : 46}>
       <TopBorderContainer isFirst={isFirst} style={{
-        backgroundColor: rowStyle?.backgroundColor ?? '#fff'
+        backgroundColor: rowStyle.backgroundColor || '#fff'
       }}>
         <TopBorder style={rowBorderStyle} />
       </TopBorderContainer>
