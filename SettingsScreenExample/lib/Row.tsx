@@ -41,7 +41,9 @@ export const Row = ({
 
   return (
     <Container height={subtitle ? 56 : 46}>
-      <TopBorderContainer isFirst={isFirst}>
+      <TopBorderContainer isFirst={isFirst} style={{
+        backgroundColor: rowStyle?.backgroundColor ?? '#fff'
+      }}>
         <TopBorder style={rowBorderStyle} />
       </TopBorderContainer>
       <ContentContainer style={[styles.contentContainer, rowStyle]} onPress={onPress}>
@@ -60,7 +62,7 @@ export const Row = ({
         {renderAccessory && renderAccessory()}
         {showDisclosureIndicator ? <Chevron /> : <View style={{ width: 10 }} />}
       </ContentContainer>
-      {isLast && <BottomBorder />}
+      {isLast && <BottomBorder style={rowBorderStyle} />}
     </Container>
   )
 }
