@@ -1,10 +1,11 @@
 import * as React from 'react'
-import { StyleSheet, View, TouchableOpacity, TextStyle } from 'react-native'
+import { StyleSheet, View, TouchableOpacity, TextStyle, ViewStyle } from 'react-native'
 import styled from 'styled-components/native'
 
 import { Chevron } from './Chevron'
 
 export interface RowData {
+  rowStyle: ViewStyle
   title: string
   titleStyle?: TextStyle
   subtitle?: string
@@ -27,7 +28,8 @@ export const Row = ({
   onPress,
   showDisclosureIndicator,
   renderAccessory,
-
+  
+  rowStyle = {},
   titleStyles,
   subtitleStyles,
   isFirst,
@@ -40,7 +42,7 @@ export const Row = ({
       <TopBorderContainer isFirst={isFirst}>
         <TopBorder />
       </TopBorderContainer>
-      <ContentContainer style={styles.contentContainer} onPress={onPress}>
+      <ContentContainer style={[styles.contentContainer, rowStyle]} onPress={onPress}>
         <TitlesContainer>
           <View />
           <Title numberOfLines={1} style={titleStyles}>

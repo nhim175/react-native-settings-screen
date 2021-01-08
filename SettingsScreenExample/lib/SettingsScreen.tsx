@@ -18,13 +18,15 @@ export interface Props {
   data: SettingsData
   globalTextStyle?: TextStyle
   scrollViewProps?: Partial<ScrollViewProps>
+  rowStyle?: ViewStyle
 }
 
 export class SettingsScreen extends React.Component<Props> {
   state = { refreshing: false }
+  const { data, style, globalTextStyle, scrollViewProps, rowStyle  } = this.props
 
   render() {
-    const elements = this.props.data.map((item, i) => {
+    const elements = data.map((item, i) => {
       switch (item.type) {
         case 'CUSTOM_VIEW':
           return <View key={item.key || i}>{item.render()}</View>
@@ -33,15 +35,15 @@ export class SettingsScreen extends React.Component<Props> {
             <Section
               key={item.header || i}
               section={item}
-              globalTextStyle={this.props.globalTextStyle}
+              globalTextStyle={globalTextStyle}
             />
           )
       }
     })
 
     const scrollViewProps: ScrollViewProps = {
-      ...(this.props.scrollViewProps || {}),
-      style: this.props.style,
+      ...(scrollViewProps || {}),
+      style,
     }
 
     return (

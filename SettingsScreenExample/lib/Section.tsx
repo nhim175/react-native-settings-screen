@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { TextStyle } from 'react-native'
+import { TextStyle, ViewStyle } from 'react-native'
 import styled from 'styled-components/native'
 
 import { Row, RowData } from './Row'
@@ -15,9 +15,10 @@ export interface SectionData {
 export interface SectionProps {
   section: SectionData
   globalTextStyle?: TextStyle
+  rowStyle?: ViewStyle
 }
 
-export const Section = ({ section, globalTextStyle }: SectionProps) => {
+export const Section = ({ section, globalTextStyle, rowStyle }: SectionProps) => {
   let elements: React.ReactElement<any>[] = []
 
   if (section.header) {
@@ -37,6 +38,7 @@ export const Section = ({ section, globalTextStyle }: SectionProps) => {
       <Row
         key={rowData.title}
         {...rowData}
+        rowStyle={rowStyle}
         titleStyles={[globalTextStyle, rowData.titleStyle]}
         subtitleStyles={[globalTextStyle, rowData.subtitleStyle]}
         isFirst={isFirst}
