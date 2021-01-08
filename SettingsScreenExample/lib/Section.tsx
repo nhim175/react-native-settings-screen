@@ -19,7 +19,7 @@ export interface SectionProps {
   rowBorderStyle?: ViewStyle
 }
 
-export const Section = ({ section, globalTextStyle, rowStyle }: SectionProps) => {
+export const Section = ({ section, globalTextStyle, rowStyle, rowBorderStyle }: SectionProps) => {
   let elements: React.ReactElement<any>[] = []
 
   if (section.header) {
