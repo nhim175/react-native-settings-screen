@@ -36,6 +36,7 @@ export class SettingsScreen extends React.Component<Props> {
               key={item.header || i}
               section={item}
               globalTextStyle={globalTextStyle}
+              rowStyle={rowStyle}
             />
           )
       }
