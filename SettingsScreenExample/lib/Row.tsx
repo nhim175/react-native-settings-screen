@@ -60,7 +60,7 @@ export const Row = ({
           <View />
         </TitlesContainer>
         {renderAccessory && renderAccessory()}
-        {showDisclosureIndicator ? <Chevron style={{color: '#999'}} /> : <View style={{ width: 10 }} />}
+        {showDisclosureIndicator ? <Chevron style={{tintColor: '#999'}} /> : <View style={{ width: 10 }} />}
       </ContentContainer>
       {isLast && <BottomBorder style={rowBorderStyle} />}
     </Container>
