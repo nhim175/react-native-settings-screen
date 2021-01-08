@@ -41,13 +41,13 @@ export class SettingsScreen extends React.Component<Props> {
       }
     })
 
-    const scrollViewProps: ScrollViewProps = {
+    const _scrollViewProps: ScrollViewProps = {
       ...(scrollViewProps || {}),
       style,
     }
 
     return (
-      <SettingsScrollView {...scrollViewProps}>{elements}</SettingsScrollView>
+      <SettingsScrollView {..._scrollViewProps}>{elements}</SettingsScrollView>
     )
   }
 }
