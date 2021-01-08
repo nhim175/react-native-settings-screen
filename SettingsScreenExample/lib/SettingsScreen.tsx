@@ -23,9 +23,9 @@ export interface Props {
 
 export class SettingsScreen extends React.Component<Props> {
   state = { refreshing: false }
-  const { data, style, globalTextStyle, scrollViewProps, rowStyle  } = this.props
-
+  
   render() {
+    const { data, style, globalTextStyle, scrollViewProps, rowStyle  } = this.props
     const elements = data.map((item, i) => {
       switch (item.type) {
         case 'CUSTOM_VIEW':
